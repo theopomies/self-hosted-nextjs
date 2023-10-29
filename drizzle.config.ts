@@ -9,6 +9,7 @@ if (!connectionString) {
   throw new Error("DATABASE_URL is not set (drizzle.config.ts)");
 }
 
+// Mostly serves for Drizzle Studio
 export default {
   schema: "./src/db/schema.ts",
   out: "./drizzle",

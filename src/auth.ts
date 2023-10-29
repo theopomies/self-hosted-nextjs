@@ -10,6 +10,7 @@ export const {
   handlers: { GET, POST },
 } = NextAuth({
   ...authConfig,
+  session: { strategy: "jwt" },
   adapter: DrizzleAdapter(db),
 });
 
