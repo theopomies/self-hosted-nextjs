@@ -18,4 +18,5 @@ export const db = drizzle(sql, {
   schema,
 });
 
+// This line is commented because it also causes troubles when building but by looping forever so I dont get the error message
 // await migrate(db, { migrationsFolder: "drizzle" });
