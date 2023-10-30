@@ -1,0 +1,8 @@
+FROM node:18-alpine
+
+COPY ./prisma ./prisma
+COPY ./migrations.sh ./migrations.sh
+
+RUN yarn add prisma @prisma/client
+
+CMD ["/bin/sh", "-c", "/migrations.sh"]

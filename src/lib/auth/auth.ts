@@ -1,9 +1,9 @@
 import "server-only";
-import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import NextAuth, { Session } from "next-auth";
 import { NextRequest } from "next/server";
-import { db } from "./db";
-import { authConfig } from "@/auth.config";
+import { authConfig } from "@/lib/auth/auth.config";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { db } from "../db";
 
 export const {
   auth,
@@ -11,7 +11,7 @@ export const {
 } = NextAuth({
   ...authConfig,
   session: { strategy: "jwt" },
-  adapter: DrizzleAdapter(db),
+  adapter: PrismaAdapter(db),
 });
 
 export function protectedRoute(

@@ -1,4 +1,4 @@
-import { protectedRoute } from "@/auth";
+import { protectedRoute } from "@/lib/auth/auth";
 
 export const GET = protectedRoute((req) => {
   if (req.auth) {

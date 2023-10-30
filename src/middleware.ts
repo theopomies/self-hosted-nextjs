@@ -1,5 +1,5 @@
 import NextAuth from "next-auth";
-import { authConfig } from "@/auth.config";
+import { authConfig } from "@/lib/auth/auth.config";
 
 // Necessary if I want a middleware because DrizzleAdapter can only run on the server
 export default NextAuth(authConfig).auth;
